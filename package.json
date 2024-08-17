@@ -9,7 +9,7 @@
     "start": "node build/index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "litotechenterprise",
   "license": "ISC",
   "devDependencies": {
     "@types/body-parser": "^1.19.5",

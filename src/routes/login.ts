@@ -1,4 +1,9 @@
 import { Request, Response, Router } from "express";
+import { RequestWithBody } from "../types";
+
+if (!process.env.EMAIL || !process.env.PASSWORD) {
+  throw new Error("Email and password environment variables are required");
+}
 
 const loginRouter = Router();
 
@@ -17,18 +22,30 @@ loginRouter
               <form method="post">
                   <div>
                   <label>Email</label>
-                  <input name="email" />
+                  <input name="email" type="text" />
                   </div>
                   <div>
                    <label>Password</label>
-                  <input type="text" name="password" />
+                  <input type="password" name="password" />
                   </div>
                   <button>Submit</button>
               </form>
               `);
   })
-  .post((req: Request, res: Response) => {
+  .post((req: RequestWithBody, res: Response) => {
     const { email, password } = req.body;
+
+    const authenticated =
+      email &&
+      password &&
+      email === "pablo@gmail.com" &&
+      password === "password";
+
+    if (authenticated) {
+      res.send(`${email}`);
+    } else {
+      res.status(422).send("Invalid credentials");
+    }
   });
 
 export default loginRouter;

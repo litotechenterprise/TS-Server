@@ -1,4 +1,4 @@
-# Simple TypeScripe Express Server
+# Simple TypeScript Express Server
 
 This typescript express server, implements express-session to handle authentication throughout the application
 

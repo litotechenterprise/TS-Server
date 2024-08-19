@@ -1,6 +1,6 @@
 # Simple TypeScript Express Server
 
-This typescript express server, implements express-session to handle authentication throughout the application
+This TypeScript Express server utilizes express-session to manage authentication across the application. It also incorporates decorators to enhance simplicity and promote code reuse.
 
 ## Table of Contents
 
@@ -16,3 +16,7 @@ Please install all require dependency by run the following command:
 ```
 
 ## Usage
+
+```bash
+    npm run dev
+```

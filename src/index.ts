@@ -1,5 +1,4 @@
 import express from "express";
-import loginRouter from "./routes/login";
 import bodyParser from "body-parser";
 import cookieSession from "cookie-session";
 import dotenv from "dotenv";
